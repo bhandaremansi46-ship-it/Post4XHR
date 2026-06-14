@@ -175,11 +175,12 @@ function onupdate(){
             let p = div.querySelector('.card-body p')
             p.innerText = UPDATE_OBJ.body
 
-            snackbar(`The Post ID ${UPDATE_ID} is Updated Successfully !!!` , 'success')
+            snackbar(`The Post ID ${UPDATE_OBJ} is Updated Successfully !!!` , 'success')
 
             addpost.classList.remove('d-none')
             updatepost.classList.add('d-none')
             spinner.classList.add('d-none')
+            inputform.reset()
 
         }else{
             let err = xhr.response
@@ -216,11 +217,14 @@ function onRemove(ele){
 
                 snackbar(`the card ID ${REMOVE_ID} is removed SUccessFully!!!` , 'success')
 
+                     
             }
 
-            spinner.classList.add('d-none')
+         
         }
+      spinner.classList.add('d-none')
     });
+  
 }
 
 inputform.addEventListener('submit',onsubmit)
